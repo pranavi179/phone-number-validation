@@ -19,14 +19,19 @@ const useForm = (callback, validate) => {
 // const localData = localStorage.getItem('value')
 // return localData ? JSON.parse(localData): [] ; 
 
-const [value, setValue] = useState([], () => {
-    const localData = localStorage.getItem('value')
-      return localData ? JSON.parse(localData): [] ; 
-  })
-  useEffect(() => {
-    localStorage.setItem('value', JSON.stringify(values))
-  }, [values])
 
+// const [value, setValue] = useState([], () => {
+//     const localData = window.localStorage.getItem('value')
+//       return localData ? JSON.parse(localData): [] ; 
+//   })
+  useEffect(() => {
+      localStorage.setItem('value', JSON.stringify(values))
+  })
+  
+// testing
+  if('value' in localStorage){
+console.log('setitem is set',values) } else {
+console.log('not set') }
 
 
   const handleSubmit = e => {
